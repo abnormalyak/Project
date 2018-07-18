@@ -36,8 +36,8 @@ def write_file(text):
 def create_account(u, p):
     os.makedirs(u)
     ufile = open('%s\%s_details.txt' % (u, u), 'a')
-    ufile.write(u + "\n" + p)
-    return "Successful"
+    ufile.write(u + " " + p)       # error was that had a new line, and I misunderstood the 'check' code in later lines
+    return "Successful"            # as it splits each line, therefore the indexing refers to each item within the line rather than each line (which is what I thought it was doing)
 
 def login(u, p):
     ufile = open('%s\%s_details.txt' % (u, u), 'r+')
@@ -49,4 +49,4 @@ def login(u, p):
             print("Login failed")
     return
     
-# So far all functional except login function. other functions created for future use, although may not be needed. 
+# So far all functional. other functions created for future use, although may not be needed. 
